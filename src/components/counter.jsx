@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
 
 export default class Counter extends Component {
+    state = {
+        count: 0
+    };
     render() { 
-        return <h1>Hellow World</h1>;
+        return (
+            <div>
+                <span>{this.formatCount()}</span>
+                <button>Increment</button>
+            </div>
+        );
+    }
+
+    formatCount() {
+        return this.state.count === 0 ? 'Zero' : this.state.count;
     }
 }
